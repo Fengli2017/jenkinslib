@@ -25,7 +25,6 @@ pipeline {
     stages {
         //下载代码
         stage("GetCode"){ //阶段名称
-            when { environment name: 'test', value: 'abcd' }
             steps{  //步骤
                 timeout(time:5, unit:"MINUTES"){   //步骤超时时间
                     script{ //填写运行代码
@@ -36,30 +35,30 @@ pipeline {
         }
 
         
-		//构建
-		stage("Build"){
-			steps{
-				timeout(time:20, unit:"MINUTES"){
-					script{
-						println('应用打包')
-					}
+	//构建
+	stage("Build"){
+		steps{
+			timeout(time:20, unit:"MINUTES"){
+				script{
+					println('应用打包')
 				}
 			}
 		}
+	}
 
         
-		//代码扫描
-		stage("CodeScan"){
-			steps{
-				timeout(time:30, unit:"MINUTES"){
-					script{
-						print("代码扫描")
-						
-						tools.PrintMes("This is my lib")
-					}
+	//代码扫描
+	stage("CodeScan"){
+		steps{
+			timeout(time:30, unit:"MINUTES"){
+				script{
+					print("代码扫描")
+
+					tools.PrintMes("This is my lib")
 				}
 			}
 		}
+	}
     }
 
     //构建后操作
