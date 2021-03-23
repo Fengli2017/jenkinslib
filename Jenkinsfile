@@ -28,7 +28,7 @@ pipeline {
             steps{  //步骤
                 timeout(time:5, unit:"MINUTES"){   //步骤超时时间
                     script{ //填写运行代码
-                        println('Get Code!')
+                        println('Getting Code!')
                     }
                 }
             }
@@ -40,7 +40,7 @@ pipeline {
 		steps{
 			timeout(time:20, unit:"MINUTES"){
 				script{
-					println('Application Packaging!')
+					println('Packaging Application!')
 				}
 			}
 		}
