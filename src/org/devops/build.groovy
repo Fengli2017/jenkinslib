@@ -7,5 +7,5 @@ def Build(buildType,buildShell){
     println("Selected Build Type is ${buildType}")
     buildHome = tool buildTools[buildType]
   
-    batch """${buildHome}/bin/${buildType} &{buildShell}"""
+    bat """${buildHome}/bin/${buildType} &{buildShell}"""
 }
