@@ -2,7 +2,7 @@ package org.devops
 
 //scan
 def SonarScan(projectName,projectDesc,projectPath){
-    def scannerHome = "C:\DevOps\Sonar-Scanner\bin"
+    def scannerHome = "C:/DevOps/Sonar-Scanner/bin"
     def sonarServer = "http://127.0.0.1:9000"
     def sonarDate = bat returnStdout: true, script: 'echo %DATE:~0,4%%DATE:~5,2%%DATE:~8,2%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%'
     sonarDate = sonarDate - "\n"
