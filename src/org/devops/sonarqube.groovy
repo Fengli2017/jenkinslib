@@ -3,7 +3,6 @@ package org.devops
 //scan
 def SonarScan(projectName,projectDesc,projectPath){
     withSonarQubeEnv("sonar"){
-        //def scannerHome = "C:/DevOps/Sonar-Scanner/bin/sonar-scanner"
         def sonarServer = "http://localhost:9000"
         def sonarDate = bat returnStdout: true, script: """echo %DATE:~0,4%%DATE:~5,2%%DATE:~8,2%%TIME:~0,2%%TIME:~3,2%%TIME:~6,2%"""
         sonarDate = sonarDate[-16..-3]
