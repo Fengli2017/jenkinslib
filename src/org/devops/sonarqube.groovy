@@ -8,9 +8,8 @@ def SonarScan(projectName,projectDesc,projectPath){
     sonarDate = sonarDate[-16..-3]
     println("${sonarDate}")
     //sonarDate = sonarDate - "\n"
-    /*    
+        
     bat """
-        C:/DevOps/Sonar-Scanner/bin/sonar-scanner -Dsonar.host.url=${sonarServer} -Dsonar.projectKey=${projectName} -Dsonar.projectName=${projectName} -Dsonar.projectVersion=1.0 -Dsonar.login=admin -Dsonar.password=123456 -Dsonar.ws.timeout=30 -Dsonar.projectDescription=${projectDesc} -Dsonar.links.homepage=http://www.baidu.com -Dsonar.sources=${projectPath} -Dsonar.sourceEncoding=UTF-8 -Dsonar.java.binaries=target/classes -Dsonar.java.test.binaries=target/test-classes -Dsonar.java.surefire.report=target/surefire-reports
+        C:/DevOps/Sonar-Scanner/bin/sonar-scanner -Dsonar.host.url=${sonarServer} -Dsonar.projectKey=${projectName} -Dsonar.projectName=${projectName} -Dsonar.projectVersion=${sonarDate} -Dsonar.login=admin -Dsonar.password=123456 -Dsonar.ws.timeout=30 -Dsonar.projectDescription=${projectDesc} -Dsonar.links.homepage=http://www.baidu.com -Dsonar.sources=${projectPath} -Dsonar.sourceEncoding=UTF-8 -Dsonar.java.binaries=target/classes -Dsonar.java.test.binaries=target/test-classes -Dsonar.java.surefire.report=target/surefire-reports
     """
-    */
 }
