@@ -19,7 +19,7 @@ def GetProjectStatus(projectName){
     apiUrl = "project_branches/list?project=${projectName}"
     response = HttpReq("GET",apiUrl,'')
     
-    response = readJSON text: """${response.content}"""
+    //response = readJSON text: """${response.content}"""
     
     println(response)
     
