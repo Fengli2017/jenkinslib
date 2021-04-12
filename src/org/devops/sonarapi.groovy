@@ -20,7 +20,8 @@ def GetProjectStatus(projectName){
     response = HttpReq("GET",apiUrl,'')
     
     response = readJSON text: """${response.content}"""
-    println(response)
+    result = response["branches"][0]["status"]["QualityGateStatus"]
+    //println(response)
     
-    return response
+    return result
 }
