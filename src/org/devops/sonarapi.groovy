@@ -22,6 +22,7 @@ def GetProjectStatus(projectName){
     //response = readJSON text: """${response.content}"""
     
     println(response)
+    println("test")
     
     return response
 }
