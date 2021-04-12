@@ -20,9 +20,7 @@ def GetProjectStatus(projectName){
     response = HttpReq("GET",apiUrl,'')
     
     response = readJSON text: """${response.content}"""
-    println("test1.1")
     println(response)
-    println("test1.2")
     
     return response
 }
