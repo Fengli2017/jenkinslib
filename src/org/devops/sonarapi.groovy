@@ -40,3 +40,13 @@ def SearchProject(projectName){
         return "ture"
     }
 }
+
+//在sonarqube里创建sonar项目
+def CreateProject(projectName){
+    apiUrl = "projects/create?name=${projectName}&project=${projectName}"
+    response = HttpReq("POST",apiUrl,'')
+    println(response)
+}
+    
+    
+    
