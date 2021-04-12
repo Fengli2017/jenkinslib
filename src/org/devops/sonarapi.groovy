@@ -58,6 +58,8 @@ def ConfigQualityProfiles(projectName,lang,qualityProfileName){
 //获取sonarqube质量域ID
 def GetQualityGateId(gateName){
     apiUrl = "qualitygates/show?name=${gateName}"
+    response = HttpReq("GET",apiUrl,'')
+    
     response = readJSON text: """${response.content}"""
     result = response["id"]
     
