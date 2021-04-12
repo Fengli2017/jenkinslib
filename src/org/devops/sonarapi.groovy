@@ -2,7 +2,7 @@ package org.devops
 
 //封装HTTP
 def HttpReq(reqType,reqUrl,reqBody){
-    def gitServer = "http://localhost:9000/api"
+    def sonarServer = "http://localhost:9000/api"
     result = httpRequest authentication: 'sonar-admin', 
         httpMode: reqType, 
         contentType: "APPLICATION_JSON",
