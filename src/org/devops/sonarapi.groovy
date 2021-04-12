@@ -25,3 +25,18 @@ def GetProjectStatus(projectName){
     
     return result
 }
+
+//搜索sonar项目，判断项目是否存在
+def SearchProject(projectName){
+    apiUrl = "projects/search?projects=${projectName}"
+    response = HttpReq("GET",apiUrl,'')
+    
+    response = readJSON text: """${response.content}"""
+    result = response["paging"]["total"]
+    
+    if(result.toString() == "0"){
+        return "false"
+    } else {
+        return "ture"
+    }
+}
