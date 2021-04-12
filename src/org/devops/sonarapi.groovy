@@ -26,7 +26,7 @@ def GetProjectStatus(projectName){
     return result
 }
 
-//搜索sonar项目，判断项目是否存在
+//搜索sonarqube的项目，判断项目是否存在
 def SearchProject(projectName){
     apiUrl = "projects/search?projects=${projectName}"
     response = HttpReq("GET",apiUrl,'')
@@ -48,5 +48,10 @@ def CreateProject(projectName){
     println(response)
 }
     
-    
+ //配置sonarqube项目质量规则
+def ConfigQualityProfiles(projectName,lang,qualityProfileName){
+    apiUrl = "qualityprofiles/add_project?language=${lang}&project=${projectName}&qualityProfile=${qualityProfileName}"
+    response = HttpReq("POST",apiUrl,'')
+    println(response)
+}
     
