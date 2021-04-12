@@ -54,4 +54,20 @@ def ConfigQualityProfiles(projectName,lang,qualityProfileName){
     response = HttpReq("POST",apiUrl,'')
     println(response)
 }
+
+//获取sonarqube质量域ID
+def GetQualityGateId(gateName){
+    apiUrl = "qualitygates/show?name=${gateName}"
+    response = readJSON text: """${response.content}"""
+    result = response["id"]
     
+    return result
+}
+
+ //配置sonarqube项目质量域
+def ConfigQualityGates(projectName,gateName){
+    gateId = GetQualityGateId(gateName)
+    apiUrl = "qualitygates/select?gateId=${gateId}&projectKey=${projectName}"
+    response = HttpReq("POST",apiUrl,'')
+    println(response)
+}
